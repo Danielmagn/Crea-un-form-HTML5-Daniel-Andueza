@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Form HTML</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  </head>
+  <body class=" bg-light">
+    
+    <div class="container py-5">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="mb-0">Ejemplo de formulario de pago</h4>
+        </div>
+      
+      
+      <div class="card-body">
+      
+      <div class="alert alert-danger d-none" id="AlertaDeError">
+        Faltan algunos campos
+      </div>
+
+        <form id="EjemploDePago" novalidate>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="NumeroTarjeta" class="form-label">Número de la tarjeta</label>
+              <input type="number" id="NumeroTarjeta" class="form-control" placeholder="XXXX XXXX XXXX XXXX"  minlength="16" maxlength="16">
+            </div>
+
+            <div class="col-md-3">
+              <label for="cvc" class="form-label"> # cvc</label>
+              <input type="number" id="cvc" class="form-control" placeholder="000">
+            </div>
+
+            <div class="col-md-3">
+              <label for="Monto" class="form-label">Monto o Valor</label>
+              <div class="input-group">
+                <span class="input-group-text">$</span>
+                <input type="number" id="Monto" class="form-control" placeholder="Valor" required min="1">
+              </div>
+            </div>
+          </div>
+        
+         <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="Nombre" class="form-label">Nombre</label>
+            <input type="text" id="Nombre" class="form-control" required>
+          </div>
+         </div> 
+
+         <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="Apellido" class="form-label">Apellido</label>
+            <input type="text" id="Apellido" class="form-control" required>
+          </div>
+         </div>
+         <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="ciudad" class="form-label">Ciudad</label>
+            <input type="text" id="ciudad" class="form-control" required>
+          </div>
+          <div class="col-md-3">
+            <label for="Estado" class="form-label">Estado</label>
+            <select id="Estado" class="form-select" required>
+              <option value="">Selecciona un Estado</option>
+              <option>California</option>
+              <option>New York</option>
+              <option>Atlantico</option>
+              <option>Antioquia</option>
+              <option>Zuid-Holland</option>
+              <option>Noord-Holland</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label for="CodigoPostal" class="form-label">Codigo Postal</label>
+            <input type="text" id="CodigoPostal" class="form-control" required pattern="\d{5}" maxlength="5">
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Selecciona un método de pago:</label>
+          <div class="d-flex gap-4 flex-wrap">
+            
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="metodoPago" id="tarjeta" value="tarjeta" required>
+              <label class="form-check-label d-flex align-items-center" for="tarjeta">
+                <i class="bi bi-credit-card-fill fs-4 text-secondary me-2"></i> Tarjeta
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="metodoPago" id="MarterdCard" value="MarterdCard">
+              <label class="form-check-label d-flex align-items-center" for="MarterdCard">
+                <i class="bi bi-wallet-fill fs-4 text-primary me-2"></i> MarterdCard
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="metodoPago" id="Visa" value="Visa">
+              <label class="form-check-label d-flex align-items-center" for="Visa">
+                <i class="bi bi-cash-stack fs-4 text-success me-2"></i> Visa
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="metodoPago" id="otraTarjeta" value="otraTarjeta">
+              <label class="form-check-label d-flex align-items-center" for="otraTarjeta">
+                <i class="bi bi-credit-card-2-front-fill fs-4 text-danger me-2"></i> Otra Tarjeta
+              </label>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" class="form-control" placeholder="predito_perez@ejemplo.com" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="Mensage" class="form-label">Mensage</label>
+          <textarea id="Mensage" class="form-control" rows="3" placeholder="Añade tus comentarios aquí" required></textarea>
+        </div>
+
+        <div class="text-end">
+          <button type="reset" class="btn btn-secondary me-2">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+        </form>
+      </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  
+    <script>
+      const formulario = document.getElementById('EjemploDePago');
+      const alertaError = document.getElementById('AlertaDeError');
+
+      formulario.addEventListener('submit', function (e) {
+        if (!formulario.checkValidity()) {
+          e.preventDefault();
+          e.stopPropagation();
+          alertaError.classList.remove('d-none');
+        } else {
+          alertaError.classList.add('d-none');
+        }
+
+        formulario.classList.add('was-validated');
+      });
+    </script>
+          
+  </body>
+</html>
